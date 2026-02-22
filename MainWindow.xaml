@@ -1,0 +1,70 @@
+﻿<Window x:Class="Tic_Tac_Toe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tic_Tac_Toe"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="MainWindow" 
+        MinHeight="450" MinWidth="450"
+        MaxHeight="450" MaxWidth="450"
+        AllowsTransparency="True"
+        Background="Transparent"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Style/style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border CornerRadius="10" BorderThickness="2" BorderBrush="#777">
+        <Grid Background="Transparent">
+            <Border CornerRadius="10" BorderThickness="0" Margin="-1" Background="Black">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid x:Name="TTT_Grid" Button.Click="Grid_Click"  Width="306" Height="306" Margin="5,5,5,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="102"/>
+                            <ColumnDefinition Width="102"/>
+                            <ColumnDefinition Width="102"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="102"/>
+                            <RowDefinition Height="102"/>
+                            <RowDefinition Height="102"/>
+                        </Grid.RowDefinitions>
+                        <Button Style="{StaticResource Box}" Grid.Column="0" Grid.Row="0" Content="" />
+                        <Button Style="{StaticResource Box}" Grid.Column="1" Grid.Row="0" Content="" />
+                        <Button Style="{StaticResource Box}" Grid.Column="2" Grid.Row="0" Content="" />
+                        <Button Style="{StaticResource Box}" Grid.Column="0" Grid.Row="1" Content="" />
+                        <Button Style="{StaticResource Box}" Grid.Column="1" Grid.Row="1" Content="" />
+                        <Button Style="{StaticResource Box}" Grid.Column="2" Grid.Row="1" Content="" />
+                        <Button Style="{StaticResource Box}" Grid.Column="0" Grid.Row="2" Content="" />
+                        <Button Style="{StaticResource Box}" Grid.Column="1" Grid.Row="2" Content="" />
+                        <Button Style="{StaticResource Box}" Grid.Column="2" Grid.Row="2" Content="" />
+                    </Grid>
+                    <StackPanel
+                        HorizontalAlignment="Center" 
+                        Height="40" Orientation="Horizontal" >
+                        <TextBlock  
+                            x:Name="WinnerText"
+                            Foreground="GhostWhite" 
+                            Margin="0,0,15,0" 
+                            Padding="10" 
+                            FontSize="20" 
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Center">
+                            __ is the winner.
+                        </TextBlock>
+                        <Button 
+                            Click="Rst_Button_Click"
+                            Content="Reset" 
+                            Style="{StaticResource Reset_Btn}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
