@@ -24,6 +24,15 @@
         <Grid Background="Transparent">
             <Border CornerRadius="10" BorderThickness="0" Margin="-1" Background="Black">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button 
+                        Style="{StaticResource Close_btn}" 
+                        Content="Close" 
+                        Width="100" 
+                        FontSize="18" 
+                        FontWeight="Medium" 
+                        Margin="0,0,0,10"
+                        Click="Button_Click"
+                        />
                     <Grid x:Name="TTT_Grid" Button.Click="Grid_Click"  Width="306" Height="306" Margin="5,5,5,20">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="102"/>

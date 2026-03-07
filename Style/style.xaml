@@ -54,4 +54,30 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="Close_btn" TargetType="Button">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="rst_border"
+                        CornerRadius="6"
+                        Background="Red"
+                        Width="70"
+                        BorderBrush="#111">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="rst_border" Property="Background" Value="Orangered"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="rst_border"  Property="Background" Value="Darkred"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

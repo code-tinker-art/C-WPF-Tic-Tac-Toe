@@ -126,5 +126,10 @@ namespace Tic_Tac_Toe
             WinnerText.Text = "__ is the winner.";
             isX = true;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
